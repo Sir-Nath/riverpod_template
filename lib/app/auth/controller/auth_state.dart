@@ -14,7 +14,10 @@ class AuthState {
     );
   }
 
-  AuthState copyWith({bool? status, String? error}) {
+  AuthState copyWith({
+    bool? status,
+    String? error,
+  }) {
     return AuthState(
       status: status ?? this.status,
       error: error ?? this.error,

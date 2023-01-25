@@ -8,7 +8,11 @@ import '../core/utils/logger.dart';
 import 'my_app.dart';
 
 class AppStart {
-  final resolvers = <FeatureResolver>[AuthResolver(baseUrl: 'google.com')];
+  final resolvers = <FeatureResolver>[
+    AuthResolver(
+      baseUrl: 'google.com',
+    ),
+  ];
 
   Future<void> startApp() async {
     final routerModule = <RouterModule>[];
@@ -17,8 +21,8 @@ class AppStart {
       routerModule.add(resolver.routerModule);
     }
 
-    await  AppSetup.init();
-        await runZonedGuarded<Future<void>>(() async {
+    await AppSetup.init();
+    await runZonedGuarded<Future<void>>(() async {
       runApp(
         MyApp(
           routerModule: routerModule,

@@ -27,8 +27,12 @@ class MyApp extends StatelessWidget {
     late List<GoRoute> listOfRoute;
     for (var element in routerModule) {
       listOfRoute = element.getRoutes();
-      route = GoRouter(routes: [...listOfRoute]);
-    } 
+      route = GoRouter(
+        routes: [
+          ...listOfRoute,
+        ],
+      );
+    }
     return route;
   }
 }
